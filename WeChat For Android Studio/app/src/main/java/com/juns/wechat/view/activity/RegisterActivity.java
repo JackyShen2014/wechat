@@ -33,6 +33,7 @@ import com.juns.wechat.view.BaseActivity;
 
 //注册
 public class RegisterActivity extends BaseActivity implements OnClickListener {
+    private final static String LOG_TAG = "RegisterActivity";
 	private TextView txt_title;
 	private ImageView img_back;
 	private Button btn_register, btn_send;
@@ -205,7 +206,7 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
 						super.onSuccess(response);
 						try {
 							String result = response.getString("result");
-							System.out.println("返回的值" + response);
+							Log.i(LOG_TAG, "返回的值" + response);
 							if (result == null) {
 								Utils.showLongToast(App.getInstance(),
 										Constants.NET_ERROR);
